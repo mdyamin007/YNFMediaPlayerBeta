@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblYoutube.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblYoutube.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblYoutube.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tw Cen MT, 48pt</value>
+  </data>
+  <data name="lblYoutube.Location" type="System.Drawing.Point, System.Drawing">
+    <value>678, 463</value>
+  </data>
+  <data name="lblYoutube.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 74</value>
+  </data>
+  <data name="lblYoutube.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="lblYoutube.Text" xml:space="preserve">
+    <value>Stream</value>
+  </data>
+  <data name="lblYoutube.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;lblYoutube.Name" xml:space="preserve">
+    <value>lblYoutube</value>
+  </data>
+  <data name="&gt;&gt;lblYoutube.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblYoutube.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblYoutube.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblPlayMedia.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblPlayMedia.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblPlayMedia.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Tw Cen MT, 48pt</value>
+  </data>
+  <data name="lblPlayMedia.Location" type="System.Drawing.Point, System.Drawing">
+    <value>155, 463</value>
+  </data>
+  <data name="lblPlayMedia.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 74</value>
+  </data>
+  <data name="lblPlayMedia.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lblPlayMedia.Text" xml:space="preserve">
+    <value>Play Media</value>
+  </data>
+  <data name="lblPlayMedia.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;lblPlayMedia.Name" xml:space="preserve">
+    <value>lblPlayMedia</value>
+  </data>
+  <data name="&gt;&gt;lblPlayMedia.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblPlayMedia.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblPlayMedia.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lblTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>DAGGERSQUARE, 48pt</value>
+  </data>
+  <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 25</value>
+  </data>
+  <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>560, 77</value>
+  </data>
+  <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>YNF Media Player</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Name" xml:space="preserve">
+    <value>lblTitle</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblTitle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="closeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="closeButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="closeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        2iQPtwAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="closeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1034, 1</value>
+  </data>
+  <data name="closeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 55</value>
+  </data>
+  <data name="closeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;closeButton.Name" xml:space="preserve">
+    <value>closeButton</value>
+  </data>
+  <data name="&gt;&gt;closeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;closeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;closeButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="youtubeButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="youtubeButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="youtubeButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>575, 160</value>
+  </data>
+  <data name="youtubeButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 300</value>
+  </data>
+  <data name="youtubeButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;youtubeButton.Name" xml:space="preserve">
+    <value>youtubeButton</value>
+  </data>
+  <data name="&gt;&gt;youtubeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;youtubeButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;youtubeButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="playerButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="playerButton.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="playerButton.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="playerButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>114, 160</value>
+  </data>
+  <data name="playerButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>400, 300</value>
+  </data>
+  <data name="playerButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;playerButton.Name" xml:space="preserve">
+    <value>playerButton</value>
+  </data>
+  <data name="&gt;&gt;playerButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;playerButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;playerButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>96, 96</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1092, 609</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEyAAAAEAIAAoCgAAFgAAACgAAAATAAAAQAAAAAEAIAAAAAAAgAkAAMMOAADDDgAAAAAAAAAA
+        AAB6eXgQaGhoBmhoaAZoaGgGaGhoBmhoaAZoaGgGaGhoBioqpzYuLqNOJSVcMyUljDg4OFccSUkfD2pq
+        WAZqamoGaGhoBmhoaAZsbGwNgYB/C2hoaABoaGgAaGhoAGhoaABoaGgAaGhoAGhoaAAkJLwfKirFtSgo
+        oE0gIJ9IJCS2fCUlpVQnJ14aODj/ADMzfABoaGgAaGhoCYB/fgsAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAHh6YBCgozKoqKsrXKyubOyUlozQlJb6hJyfAtyYmp28lJXcXLCw0AGlpaQmBgH8LAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAACUluwAnJ8dnKirT/ykpy8grK5UxJyd3HycnyMcoKMfTJCR9LzEx
+        LQxhYWELgH9+CwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQQAJia/Lykp0esqKtT/KSnMvCgo
+        nTgpKbyqJia4dAAAAAExMS8KREREG4B/fgsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIi
+        rAspKc7AKirU/yoq1P8oKM2xKCiqLCkpqGAmJqE8GRmiAlhYVg2BgH8LAAAAAAAAAAAAAAAAAAAAABUV
+        bwAgIKEAJSW7ACkpzQA8PP8AKCjJhyoq1P8qKtT/KirT/ygozKcnJ7IYKiqaOCYmgS9QUFoRgYB/CxQU
+        ZwAdHZQAIyOyACcnxgAtLeIAHByQBSUluiAnJ8ROKCjKiSkpz9EqKtT/KirU/yoq1P8qKtP+KCjLnSQk
+        sQ8mJl4bQEBRJ4iHegoqKtIAAAAAACMjshQmJsE7JyfHcygoza4pKdDeKirS+Soq1P8qKtT/KirU/yoq
+        1P8qKtT/KirU/yoq0/woKMqTIiKxC2xsWglPTpcXJyfFVSgoy5kpKc/PKSnS8Soq0/8qKtT/KirU/yoq
+        1P8qKtT/KirU/yoq1P8qKtT/KirU/yoq1P8qKtT/KirT/SgoyYhCQocULy/DiSoq0vcqKtT/KirU/yoq
+        1P8qKtT/KirU/yoq1P8qKtT/KirU/yoq1P8qKtT+KSnOuykpzaUqKtLzKCjMpCkpz70qKtL3LCy/eC8v
+        z8QqKtT/KirU/yoq1P8qKtT/KirU/yoq1P8qKtT/KirU/yoq1P8qKtT/KirT/CcnxV4lJb0zKSnO1CUl
+        vDAnJ8diKirT/i0tzrIvL9DEKirU/yoq0/cqKtL0KirS9Coq0vQqKtL0KirS9Coq0vQqKtL0KirS9Coq
+        0vQpKc7UKSnNxykp0vApKc3GKSnP1yoq1P8uLtCxLy/RxCoq0vcoKMpnKCjIPCgoyTwoKMk8KCjJPCgo
+        yTwoKMk8KCjJPCgoyTwoKMk8KCjKPigoyj8oKMk8JyfIRScnxogqKtP7Li7Qsi8v0cQqKtL1KCjINSgo
+        ygAoKMsAKCjLACgoywAoKMsAKCjLACgoywAoKMsAKCjLACgoywAoKMsAKCjLAB4enQslJblzKirT+i0t
+        0LIvL9HEKirS9SgoyDgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAjI7YNJia+cCoq0/otLdCyLy/RxCoq0vUoKMg4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAJCS5GyUlup4qKtP5Li7Qsi8v0cQqKtL1KCjIOAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQkuRslJbqfKirT+S0t0LIvL9HEKirS9Sgo
+        yTclJboAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkJLkSJia9fyoq
+        0/otLdCyLy/RxCoq0vUlJb1oJSW6CgoKNgAKCjcACgo3AAoKNQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAJCS5ACgoyUYqKtP7Li7Qsi8v0cQqKtL1JCS5lSQktBYREVcCERFYAg8PUAEoKMkAISGoACEh
+        qAAhIagAISGoACEhqAAhIagAISGnACIiqwAoKMlEKirT+y0t0LIvL9HFKirT+CUlvaQiIqx2ISGpcCEh
+        qXAhIaZnHx+dICIiqhEiIqoRIiKqESIiqhEiIqoRIiKqESIiqREiIq0SJyfHaSoq0/0tLdCyLi7Ltyoq
+        1P8pKdDvKCjL4Cgoy+EoKMvhKCjL3ygozdQpKc3RKSnN0SkpzdEpKc3RKSnN0SkpzdEpKc3RKSnO0ikp
+        0e8qKtT/LCzHpDc3sk4rK8zALCzU2iws1NssLNTbLCzU2yws1NssLNTaLCzU1yws1NcsLNTZLCzU3Cws
+        1NwsLNTcLCzU3Cws1NwsLNPZKyvLuzMzsD9dW0QNNzepDzg40Rg+PsoaR0e4IEVFuCBFRbggMzPBUS8v
+        y5IvL8uSMDDDaEREtiBERLggRUW4IEREuCBFRbYhRES1Hzg4oQ6RkRcCS0hGCzg4qgA5OdEAgYEzA3h4
+        RgUAAP8AAAD/ACUluVgpKczeKSnP5yUlvIAjI3EEBAT/AAAA/wAAAP8A//8AAHJyUwc4OKMAZGRmAExJ
+        SAsAAAAAAAAAAGhoaAVsbGUFICDJACUluTUjI7NKJCS2JCUluSgjI7M7IiKvSR4elwUhIZwAaGhoAGho
+        aAFoaGgJAAAAAAAAAABMSUgLAAAAAAAAAABsbF8EU1NhByQkuTYkJLVMIiKqByQkuAAlJbsAKyvZASQk
+        tzojI69LHh6YBh8fngBoaGgBaGhoCAAAAAAAAAAATEpICwAAAAAAAAAAOjqjDioqw5ElJbtnISGqBiIi
+        rAAAAAAAAAAAACUlvQApKc8BJCS3OSMjr0weHpkH6OgLAGhoaAkAAAAAAAAAAEtJRwtsbGwAAAAAAD4+
+        nwwqKr9uJCS6JyIirAAAAAAAAAAAAAAAAAAAAAAAJSW9ACoq1QEkJLc3IyOvTSAggAd4eFAHAAAAAAAA
+        AABcWlgOYl1aAFpXVQBtbWAEnJwAAy4uywCVlJMAlZSTAJWUkwCVlJMAlZSTAJWUkwBRUawAFRX0ACQk
+        uDgnJ8GGMDCwNFpXUwBbWFYAWlpabmpoZgxaV1UJZ2VjDIiIhwyVlJMJlZSTCZWUkwmVlJMJlZSTCZWU
+        kwmVlJMJlZSTCZaVkgljYqUQLy/ImjQ0slNaV1MJW1hWCAAAAAB/AcAAfwBAAH+AAAB/gAAAf4AAAH/A
+        AAB8AAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/4AAB/+AAAf/gAAH/4AAB/+AAAP/wAAAf8AAAAA
+        AAAAAAAAAAAAAAAAAABmD2AAZAZgAGDCYABh4WAAY/BgAGf8YAAAAAAA
+</value>
+  </data>
+  <data name="$this.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>StartScreen</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
