@@ -42,6 +42,7 @@ namespace YNFMediaPlayerBeta
                 maxRows = ds.Tables[0].Rows.Count;
 
                 ShowRecords();
+                textBoxCurrentlyPlaying.Text = ds.Tables[0].Rows[mainForm.counter].ItemArray.GetValue(2).ToString();
             }
             catch (Exception err)
             {
@@ -64,9 +65,15 @@ namespace YNFMediaPlayerBeta
             string url = dRow.ItemArray.GetValue(1).ToString();
             mainForm.player.URL = url;
             mainForm.player.Ctlcontrols.play();
+            mainForm.counter = trackList.SelectedIndex;
             textBoxCurrentlyPlaying.Text = dRow.ItemArray.GetValue(2).ToString();
             mainForm.pictureBoxPlay.Visible = false;
             mainForm.pictureBoxPause.Visible = true;
+            mainForm.timer1.Start();
+            mainForm.trackBarVolume.Value = 15;
+            mainForm.labelVolume.Text = mainForm.trackBarVolume.Value.ToString() + "%";
+            mainForm.updateRecent(dRow);
+            
 
             if (this.mainForm.player.Visible == false)
             {

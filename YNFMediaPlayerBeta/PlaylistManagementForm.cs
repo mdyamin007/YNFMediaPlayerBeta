@@ -17,11 +17,10 @@ namespace YNFMediaPlayerBeta
         DatabaseConnection objConnect;
         string conString;
 
-        DataSet ds;
+        DataSet ds, ds_recent;
         DataRow dRow;
 
         int maxRows;
-        int counter = 0;
 
         public PlaylistManagementForm(Form CallingForm)
         {

@@ -39,8 +39,12 @@ namespace YNFMediaPlayerBeta
         {
             mainForm.player.URL = paths[trackList.SelectedIndex];
             mainForm.player.Ctlcontrols.play();
+            mainForm.counter = trackList.SelectedIndex;
             mainForm.pictureBoxLogo2.Visible = false;
             mainForm.pictureBoxPause.Visible = true;
+            mainForm.timer1.Start();
+            mainForm.trackBarVolume.Value = 15;
+            mainForm.labelVolume.Text = mainForm.trackBarVolume.Value.ToString() + "%";
 
             if (this.mainForm.player.Visible == false)
             {

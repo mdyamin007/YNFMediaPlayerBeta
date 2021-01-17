@@ -43,5 +43,14 @@ namespace YNFMediaPlayerBeta.Properties {
                 return ((string)(this["SQL"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("SELECT * FROM tbl_recent")]
+        public string SQL2 {
+            get {
+                return ((string)(this["SQL2"]));
+            }
+        }
     }
 }

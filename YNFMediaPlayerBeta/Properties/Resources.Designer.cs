@@ -73,6 +73,36 @@ namespace YNFMediaPlayerBeta.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IMG_20210110_204633 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_20210110_204633", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_20210110_211151 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_20210110_211151", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_20210110_212330 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_20210110_212330", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo2 {
             get {
                 object obj = ResourceManager.GetObject("logo2", resourceCulture);
@@ -97,16 +127,6 @@ namespace YNFMediaPlayerBeta.Properties {
             get {
                 object obj = ResourceManager.GetObject("pauseLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] PlayerDatabase {
-            get {
-                object obj = ResourceManager.GetObject("PlayerDatabase", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         

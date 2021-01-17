@@ -91,6 +91,7 @@
             // trackList
             // 
             this.trackList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(22)))), ((int)(((byte)(34)))));
+            this.trackList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
             this.trackList.FormattingEnabled = true;
             this.trackList.Location = new System.Drawing.Point(54, 99);
             this.trackList.Name = "trackList";
