@@ -29,6 +29,7 @@ namespace YNFMediaPlayerBeta
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartScreen));
             this.lblYoutube = new System.Windows.Forms.Label();
             this.lblPlayMedia = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@ namespace YNFMediaPlayerBeta
             this.closeButton = new System.Windows.Forms.PictureBox();
             this.youtubeButton = new System.Windows.Forms.Button();
             this.playerButton = new System.Windows.Forms.Button();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.closeButton)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +95,18 @@ namespace YNFMediaPlayerBeta
             this.playerButton.UseVisualStyleBackColor = true;
             this.playerButton.Click += new System.EventHandler(this.playerButton_Click);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 50;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.lblTitle;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // StartScreen
             // 
             this.AllowDrop = true;
@@ -120,6 +135,8 @@ namespace YNFMediaPlayerBeta
         private System.Windows.Forms.Button youtubeButton;
         private System.Windows.Forms.Button playerButton;
         private System.Windows.Forms.Label lblTitle;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
 

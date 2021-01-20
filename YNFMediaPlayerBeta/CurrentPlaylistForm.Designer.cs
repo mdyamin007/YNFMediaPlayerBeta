@@ -82,9 +82,9 @@ namespace YNFMediaPlayerBeta
             this.labelCurrentPlaylist.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(42)))), ((int)(((byte)(83)))));
             this.labelCurrentPlaylist.Location = new System.Drawing.Point(261, 11);
             this.labelCurrentPlaylist.Name = "labelCurrentPlaylist";
-            this.labelCurrentPlaylist.Size = new System.Drawing.Size(160, 25);
+            this.labelCurrentPlaylist.Size = new System.Drawing.Size(143, 25);
             this.labelCurrentPlaylist.TabIndex = 9;
-            this.labelCurrentPlaylist.Text = "Currently Playing";
+            this.labelCurrentPlaylist.Text = "Current Playlist";
             // 
             // CurrentPlaylistForm
             // 

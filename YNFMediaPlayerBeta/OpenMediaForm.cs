@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,11 @@ namespace YNFMediaPlayerBeta
 {
     public partial class OpenMediaForm : Form
     {
-        DatabaseConnection objConnect;
-        string conString;
-
-        DataSet ds;
-        DataRow dRow;
-
-        int maxRows;
-        int counter = 0;
+        DatabaseConnector connector = new DatabaseConnector();
 
         private PlayerForm mainForm = null;
         public string[] paths, files;
+        int r;
 
         public OpenMediaForm(Form callingForm)
         {
@@ -56,21 +51,6 @@ namespace YNFMediaPlayerBeta
 
         private void OpenMediaForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                objConnect = new DatabaseConnection();
-                conString = Properties.Settings.Default.PlayerConnectionString;
-
-                objConnect.connection_string = conString;
-                objConnect.Sql = Properties.Settings.Default.SQL;
-
-                ds = objConnect.GetConnection;
-                maxRows = ds.Tables[0].Rows.Count;
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
         }
 
         private void buttonOpen_Click(object sender, EventArgs e)
@@ -87,20 +67,19 @@ namespace YNFMediaPlayerBeta
 
                     //Database updating work for adding files into playlist
 
-                    DataRow row = ds.Tables[0].NewRow();
-                    row[1] = paths[i];
-                    row[2] = files[i];
-                    ds.Tables[0].Rows.Add(row);
+                    SqlCommand command = new SqlCommand("INSERT INTO tbl_playlist(path,fileName,username) VALUES(@path, @fileName, @username)");
+                    command.Parameters.AddWithValue("@path", paths[i]);
+                    command.Parameters.AddWithValue("@fileName", files[i]);
+                    command.Parameters.AddWithValue("@username", LoginForm.username);
+                    r = connector.executeQuery(command);                   
                 }
-
-                try
+                if (r == 1)
                 {
-                    objConnect.UpdateDatabase(ds);
-                    MessageBox.Show("Media Files Added Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Media added successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                catch (Exception err)
+                else
                 {
-                    MessageBox.Show(err.Message);
+                    MessageBox.Show("Some Error Occurred!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

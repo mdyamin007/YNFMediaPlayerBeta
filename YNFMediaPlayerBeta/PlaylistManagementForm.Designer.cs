@@ -79,6 +79,7 @@ namespace YNFMediaPlayerBeta
             this.buttonAddNew.TabIndex = 11;
             this.buttonAddNew.Text = "Add New";
             this.buttonAddNew.UseVisualStyleBackColor = false;
+            this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
             // labelManagingPlaylist
             // 

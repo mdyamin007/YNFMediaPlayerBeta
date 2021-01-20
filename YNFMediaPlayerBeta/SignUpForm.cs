@@ -42,14 +42,18 @@ namespace YNFMediaPlayerBeta
                 MessageBox.Show("Please enter your First Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else if (lastName.Equals(""))
             {
-                MessageBox.Show("Please enter your First Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter your Last Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else if(username.Equals(""))
             {
-                MessageBox.Show("Please enter your First Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter your Username.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else if(password.Equals(""))
             {
-                MessageBox.Show("Please enter your First Name.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else
+                MessageBox.Show("Please enter your Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else if(checkBoxAgree.Checked == false)
+            {
+                MessageBox.Show("Please agree our terms and services.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
             {
                 SqlCommand command = new SqlCommand("INSERT INTO tbl_users(username,password,first_name,last_name) VALUES(@username, @password, @firstName, @lastName)");
                 command.Parameters.AddWithValue("@username", username);

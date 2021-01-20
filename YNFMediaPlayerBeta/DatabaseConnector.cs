@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace YNFMediaPlayerBeta
 {
@@ -137,7 +138,8 @@ namespace YNFMediaPlayerBeta
             }
             catch (Exception ex)
             {
-                throw ex;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
             }
         }
     }

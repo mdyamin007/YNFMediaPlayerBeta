@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,28 +13,27 @@ namespace YNFMediaPlayerBeta
 {
     public partial class PlayerForm : Form
     {
-        DatabaseConnection objConnect;
-        string conString;
-
-        DataSet ds, ds_recent;
-        DataRow dRow;
-
+        DatabaseConnector connector = new DatabaseConnector();
+        DataTable mediaFiles = new DataTable();
+        DataTable recentFiles = new DataTable();
         int maxRows;
         public int counter = 0;
+        private Form activeForm = null;
+        
         public PlayerForm()
         {
             InitializeComponent();
             hideSubMenu();
         }
 
-        private void hideSubMenu()
+        public void hideSubMenu()
         {
             panelMediaSubMenu.Visible = false;
             panelPlaylistSubMenu.Visible = false;
             panelToolsSubMenu.Visible = false;
         }
 
-        private void showSubMenu(Panel subMenu)
+        public void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
             {
@@ -136,8 +136,7 @@ namespace YNFMediaPlayerBeta
             this.Close();
         }
 
-        private Form activeForm = null;
-        private void openChildForm(Form childForm)
+        public void openChildForm(Form childForm)
         {
             if (activeForm != null) activeForm.Close();
             activeForm = childForm;
@@ -158,6 +157,8 @@ namespace YNFMediaPlayerBeta
         private void pictureBoxPause_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.pause();
+            if (pictureBoxLogo2.Visible == true) pictureBoxLogo2.Visible = false;
+            if (player.Visible == false) player.Visible = true;
             pictureBoxPause.Visible = false;
             pictureBoxPlay.Visible = true;
         }
@@ -165,63 +166,48 @@ namespace YNFMediaPlayerBeta
         private void pictureBoxPlay_Click(object sender, EventArgs e)
         {
             player.Ctlcontrols.play();
+            if(pictureBoxLogo2.Visible == true) pictureBoxLogo2.Visible = false;
+            if (player.Visible == false) player.Visible = true;
             pictureBoxPlay.Visible = false;
             pictureBoxPause.Visible = true;
         }
 
         private void PlayerForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                objConnect = new DatabaseConnection();
-                conString = Properties.Settings.Default.PlayerConnectionString;
-
-                objConnect.connection_string = conString;
-                objConnect.Sql = Properties.Settings.Default.SQL;
-
-                ds = objConnect.GetConnection;
-                maxRows = ds.Tables[0].Rows.Count;
-
-                objConnect.Sql = Properties.Settings.Default.SQL2;
-                ds_recent = objConnect.GetConnection;
-
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            string query = "SELECT * FROM tbl_playlist WHERE username = '" + LoginForm.username + "';";
+            connector.readDatathroughAdapter(query, mediaFiles);
+            maxRows = mediaFiles.Rows.Count;
         }
 
         private void pictureBoxNext_Click(object sender, EventArgs e)
         {
             if (counter < maxRows - 1) counter++;
             else counter = 0;
-            dRow = ds.Tables[0].Rows[counter];
-            string url = dRow.ItemArray.GetValue(1).ToString();
+            string url = mediaFiles.Rows[counter].ItemArray.GetValue(1).ToString();
             player.URL = url;
             player.Ctlcontrols.play();
-            updateRecent(dRow);
+            if (pictureBoxLogo2.Visible == true) pictureBoxLogo2.Visible = false;
+            if (player.Visible == false) player.Visible = true;
+            updateRecent(mediaFiles.Rows[counter]);
         }
 
         private void pictureBoxPrevious_Click(object sender, EventArgs e)
         {
             if (counter > 0) counter--;
             else counter = maxRows - 1;
-            dRow = ds.Tables[0].Rows[counter];
-            string url = dRow.ItemArray.GetValue(1).ToString();
+            string url = mediaFiles.Rows[counter].ItemArray.GetValue(1).ToString();
             player.URL = url;
             player.Ctlcontrols.play();
-            updateRecent(dRow);
-            
+            if (pictureBoxLogo2.Visible == true) pictureBoxLogo2.Visible = false;
+            if (player.Visible == false) player.Visible = true;
+            updateRecent(mediaFiles.Rows[counter]);
+
         }
 
         private void pictureBoxShuffle_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            counter = random.Next(0, maxRows - 1);
-            player.URL = ds.Tables[0].Rows[counter].ItemArray.GetValue(1).ToString();
-            player.Ctlcontrols.play();
-            updateRecent(ds.Tables[0].Rows[counter]);
+            string query = "SELECT * FROM tbl_playlist WHERE username='"+LoginForm.username+"' ORDER BY newid();";
+            connector.readDatathroughAdapter(query, mediaFiles);
         }
 
         private void pictureBoxPlaylist_Click(object sender, EventArgs e)
@@ -250,18 +236,15 @@ namespace YNFMediaPlayerBeta
 
         public void updateRecent(DataRow dataRow)
         {
-            DataRow row = ds_recent.Tables[0].NewRow();
-            row[1] = dataRow[1];
-            row[2] = dataRow[2];
-            ds_recent.Tables[0].Rows.Add(row);
-            try
-            {
-                objConnect.UpdateDatabase(ds_recent);
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            string pathOfFile = dataRow[1].ToString();
+            string nameOfFile = dataRow[2].ToString();
+            string username = LoginForm.username;
+
+            SqlCommand command = new SqlCommand("INSERT INTO tbl_recent(path,fileName,username) VALUES(@path,@fileName,@username);");
+            command.Parameters.AddWithValue("@path", pathOfFile);
+            command.Parameters.AddWithValue("@fileName", nameOfFile);
+            command.Parameters.AddWithValue("@username", username);
+            connector.executeQuery(command);
         }
     }
 }

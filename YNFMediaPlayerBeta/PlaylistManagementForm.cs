@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,11 @@ namespace YNFMediaPlayerBeta
 {
     public partial class PlaylistManagementForm : Form
     {
+        DatabaseConnector connector = new DatabaseConnector();
+        DataTable mediaFiles = new DataTable();
         private PlayerForm mainForm = null;
-
-        DatabaseConnection objConnect;
-        string conString;
-
-        DataSet ds, ds_recent;
-        DataRow dRow;
-
         int maxRows;
+
 
         public PlaylistManagementForm(Form CallingForm)
         {
@@ -30,31 +27,18 @@ namespace YNFMediaPlayerBeta
 
         private void PlaylistManagementForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                objConnect = new DatabaseConnection();
-                conString = Properties.Settings.Default.PlayerConnectionString;
+            string query = @"SELECT * FROM tbl_playlist WHERE username = '" + LoginForm.username + "';";
 
-                objConnect.connection_string = conString;
-                objConnect.Sql = Properties.Settings.Default.SQL;
+            connector.readDatathroughAdapter(query, mediaFiles);
 
-                ds = objConnect.GetConnection;
-                maxRows = ds.Tables[0].Rows.Count;
-
-                ShowRecords();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            ShowRecords();
         }
 
         private void ShowRecords()
         {
-            for (int i = 0; i < maxRows; i++)
+            for (int i = 0; i < mediaFiles.Rows.Count; i++)
             {
-                dRow = ds.Tables[0].Rows[i];
-                trackList.Items.Add(dRow.ItemArray.GetValue(2).ToString());
+                trackList.Items.Add(mediaFiles.Rows[i].ItemArray.GetValue(2).ToString());
             }
         }
 
@@ -67,9 +51,10 @@ namespace YNFMediaPlayerBeta
         {
             try
             {
-                ds.Tables[0].Rows[trackList.SelectedIndex].Delete();
-                objConnect.UpdateDatabase(ds);
-                maxRows = ds.Tables[0].Rows.Count;
+                mediaFiles.Rows[trackList.SelectedIndex].Delete();
+                string query = "SELECT * FROM tbl_playlist WHERE username='" +LoginForm.username+ "';";
+                connector.executeDataAdapter(mediaFiles, query);
+                maxRows = mediaFiles.Rows.Count;
                 trackList.Items.Clear();
                 ShowRecords();
             }
@@ -79,23 +64,17 @@ namespace YNFMediaPlayerBeta
             }
         }
 
+        private void buttonAddNew_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            mainForm.openChildForm(new OpenMediaForm(mainForm));
+        }
+
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            try
-            {
-                for(int i = 0;i < maxRows; i++)
-                {
-                    ds.Tables[0].Rows[i].Delete();
-                    maxRows = ds.Tables[0].Rows.Count;
-                }
-                objConnect.UpdateDatabase(ds);
-                trackList.Items.Clear();
-                maxRows = 0;
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            SqlCommand sqlCommand = new SqlCommand("DELETE FROM tbl_playlist");
+            connector.executeQuery(sqlCommand);
+            trackList.Items.Clear();
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,15 +13,11 @@ namespace YNFMediaPlayerBeta
 {
     public partial class RecentMediaForm : Form
     {
+        DatabaseConnector connector = new DatabaseConnector();
+        DataTable mediaFiles = new DataTable();
         private PlayerForm mainForm = null;
 
-        DatabaseConnection objConnect;
-        string conString;
-
-        DataSet ds;
         DataRow dRow;
-
-        int maxRows;
 
         public RecentMediaForm(Form CallingForm)
         {
@@ -35,38 +32,24 @@ namespace YNFMediaPlayerBeta
 
         private void RecentMediaForm_Load(object sender, EventArgs e)
         {
-            try
-            {
-                objConnect = new DatabaseConnection();
-                conString = Properties.Settings.Default.PlayerConnectionString;
+            string query = @"SELECT * FROM tbl_recent WHERE username = '" +LoginForm.username+ "';";
 
-                objConnect.connection_string = conString;
-                objConnect.Sql = Properties.Settings.Default.SQL2;
+            connector.readDatathroughAdapter(query, mediaFiles);
 
-                ds = objConnect.GetConnection;
-                maxRows = ds.Tables[0].Rows.Count;
-
-                ShowRecords();
-                textBoxCurrentlyPlaying.Text = ds.Tables[0].Rows[mainForm.counter].ItemArray.GetValue(2).ToString();
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            ShowRecords();
         }
 
         private void ShowRecords()
         {
-            for (int i = 0; i < maxRows; i++)
+            for (int i = 0; i < mediaFiles.Rows.Count; i++)
             {
-                dRow = ds.Tables[0].Rows[i];
-                trackList.Items.Add(dRow.ItemArray.GetValue(2).ToString());
+                trackList.Items.Add(mediaFiles.Rows[i].ItemArray.GetValue(2).ToString());
             }
         }
 
         private void trackList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dRow = ds.Tables[0].Rows[trackList.SelectedIndex];
+            dRow = mediaFiles.Rows[trackList.SelectedIndex];
             string url = dRow.ItemArray.GetValue(1).ToString();
             mainForm.player.URL = url;
             mainForm.player.Ctlcontrols.play();
@@ -75,9 +58,8 @@ namespace YNFMediaPlayerBeta
             mainForm.pictureBoxPlay.Visible = false;
             mainForm.pictureBoxPause.Visible = true;
             mainForm.timer1.Start();
-            mainForm.updateRecent(dRow);
             mainForm.trackBarVolume.Value = 15;
-            mainForm.labelVolume.Text = mainForm.trackBarVolume.Value.ToString() + "%"; 
+            mainForm.labelVolume.Text = mainForm.trackBarVolume.Value.ToString() + "%";
 
 
             if (this.mainForm.player.Visible == false)
@@ -89,21 +71,9 @@ namespace YNFMediaPlayerBeta
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            try
-            {
-                for (int i = 0; i < maxRows; i++)
-                {
-                    ds.Tables[0].Rows[i].Delete();
-                    maxRows = ds.Tables[0].Rows.Count;
-                }
-                objConnect.UpdateDatabase(ds);
-                trackList.Items.Clear();
-                maxRows = 0;
-            }
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message);
-            }
+            SqlCommand command = new SqlCommand("DELETE FROM tbl_recent WHERE username='" + LoginForm.username + "';");
+            connector.executeQuery(command);
+            trackList.Items.Clear();
         }
     }
 }
