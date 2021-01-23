@@ -88,3 +88,6 @@ C:\Users\WALTON\source\repos\YNFMediaPlayerBeta\YNFMediaPlayerBeta\bin\Debug\Bun
 C:\Users\WALTON\source\repos\YNFMediaPlayerBeta\YNFMediaPlayerBeta\bin\Debug\Bunifu.UI.WinForms.BunifuUserControl.xml
 C:\Users\WALTON\source\repos\YNFMediaPlayerBeta\YNFMediaPlayerBeta\obj\Debug\YNFMediaPlayerBeta.csproj.CopyComplete
 C:\Users\WALTON\source\repos\YNFMediaPlayerBeta\YNFMediaPlayerBeta\obj\Debug\YNFMediaPlayerBeta.csprojAssemblyReference.cache
+C:\Users\WALTON\source\repos\YNFMediaPlayerBeta\YNFMediaPlayerBeta\obj\Debug\YNFMediaPlayerBeta.youtubeForm.resources
+C:\Users\WALTON\source\repos\YNFMediaPlayerBeta\YNFMediaPlayerBeta\bin\Debug\Newtonsoft.Json.dll
+C:\Users\WALTON\source\repos\YNFMediaPlayerBeta\YNFMediaPlayerBeta\bin\Debug\Newtonsoft.Json.xml

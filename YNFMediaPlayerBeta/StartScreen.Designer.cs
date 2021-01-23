@@ -81,6 +81,7 @@ namespace YNFMediaPlayerBeta
             this.youtubeButton.Image = global::YNFMediaPlayerBeta.Properties.Resources.ezgif_com_webp_to_jpg;
             this.youtubeButton.Name = "youtubeButton";
             this.youtubeButton.UseVisualStyleBackColor = true;
+            this.youtubeButton.Click += new System.EventHandler(this.youtubeButton_Click);
             // 
             // playerButton
             // 

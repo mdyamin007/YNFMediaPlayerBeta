@@ -37,5 +37,13 @@ namespace YNFMediaPlayerBeta
             f.ShowDialog();
             this.Show();
         }
+
+        private void youtubeButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            youtubeForm f = new youtubeForm();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

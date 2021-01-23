@@ -22,35 +22,5 @@ namespace YNFMediaPlayerBeta.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\WALTON\\source\\repos\\" +
-            "PlayerDatabase\\PlayerDatabase\\PlayerDatabase.mdf;Integrated Security=True;Connec" +
-            "t Timeout=30")]
-        public string PlayerConnectionString {
-            get {
-                return ((string)(this["PlayerConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SELECT * FROM tbl_playlist")]
-        public string SQL {
-            get {
-                return ((string)(this["SQL"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("SELECT * FROM tbl_recent")]
-        public string SQL2 {
-            get {
-                return ((string)(this["SQL2"]));
-            }
-        }
     }
 }
